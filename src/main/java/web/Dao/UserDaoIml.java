@@ -33,4 +33,19 @@ public class UserDaoIml  implements UserDao {
         user.setId(++UsersCount);
         users.add(user);
     }
+
+    @Override
+    public void updateUser(int id, User user) {
+        User userToBeUpdated = showUser(id);
+        userToBeUpdated.setName(user.getName());
+        userToBeUpdated.setEmail(user.getEmail());
+
+    }
+
+    @Override
+    public void deleteUser(int id) {
+        users.removeIf(user -> user.getId() == id);
+    }
+
+
 }
