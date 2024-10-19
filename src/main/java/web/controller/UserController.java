@@ -46,11 +46,13 @@ public class UserController {
         model.addAttribute("user", userService.showUser(id));
         return "editUser";
     }
+
     @PatchMapping("/Update")
-   public String updateUser(@ModelAttribute("user") User user,@RequestParam("id") Long id) {
-        userService.updateUser(id,user);
+    public String updateUser(@ModelAttribute("user") User user, @RequestParam("id") Long id) {
+        userService.updateUser(id, user);
         return "redirect:/";
     }
+
     @DeleteMapping("DEL")
     public String deleteUser(@RequestParam("id") Long id) {
         userService.deleteUser(id);

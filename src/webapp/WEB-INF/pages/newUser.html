@@ -7,13 +7,13 @@
 <body>
 
 <form th:method="POST" th:action="@{/}" th:object="${user}">
-  <label for="name" >Enter Name: </label>
-  <input type="text" th:field="*{name}" id="name"/>
+    <label for="name">Enter Name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
     <br/>
-  <label for="email" >Enter Email: </label>
-  <input type="text" th:field="*{email}" id="email"/>
-  <br/>
-  <input type="submit" value="Add User"/>
+    <label for="email">Enter Email: </label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <br/>
+    <input type="submit" value="Add User"/>
 </form>
 
 </body>

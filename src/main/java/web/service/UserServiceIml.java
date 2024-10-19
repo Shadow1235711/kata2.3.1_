@@ -7,6 +7,7 @@ import web.Dao.UserDao;
 import web.model.User;
 
 import java.util.List;
+
 @Service
 public class UserServiceIml implements UserService {
     private final UserDao userDao;
@@ -15,26 +16,31 @@ public class UserServiceIml implements UserService {
     public UserServiceIml(UserDao userDao) {
         this.userDao = userDao;
     }
+
     @Transactional
     @Override
     public List<User> getUsers() {
         return userDao.getUsers();
     }
+
     @Transactional
     @Override
     public User showUser(Long id) {
         return userDao.showUser(id);
     }
+
     @Transactional
     @Override
     public void saveUser(User user) {
         userDao.saveUser(user);
     }
+
     @Transactional
     @Override
     public void updateUser(Long id, User user) {
         userDao.updateUser(id, user);
     }
+
     @Transactional
     @Override
     public void deleteUser(Long id) {
