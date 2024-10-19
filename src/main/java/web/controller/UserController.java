@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @GetMapping("/ID")
-    public String UserDetails(@RequestParam("id") int id, Model model) {
+    public String UserDetails(@RequestParam("id") Long id, Model model) {
         model.addAttribute("user", userService.showUser(id));
         System.out.println("ID" + id);
         return "userDetails";
@@ -42,17 +42,17 @@ public class UserController {
     }
 
     @GetMapping("/edit")
-    public String editUser(@RequestParam("id") int id, Model model) {
+    public String editUser(@RequestParam("id") Long id, Model model) {
         model.addAttribute("user", userService.showUser(id));
         return "editUser";
     }
     @PatchMapping("/Update")
-   public String updateUser(@ModelAttribute("user") User user,@RequestParam("id") int id) {
+   public String updateUser(@ModelAttribute("user") User user,@RequestParam("id") Long id) {
         userService.updateUser(id,user);
         return "redirect:/";
     }
     @DeleteMapping("DEL")
-    public String deleteUser(@RequestParam("id") int id) {
+    public String deleteUser(@RequestParam("id") Long id) {
         userService.deleteUser(id);
         return "redirect:/";
     }
